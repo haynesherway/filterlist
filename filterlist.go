@@ -8,6 +8,11 @@ import (
 // FilterList holds a list of values to be filtered on
 type FilterList []string
 
+// New returns an empty FilterList
+func New() FilterList {
+	return FilterList{}
+}
+
 // String returns a FilterList in a string format
 func (f *FilterList) String() string {
 	return fmt.Sprintf("%v", *f)

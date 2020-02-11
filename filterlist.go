@@ -24,6 +24,14 @@ func (f *FilterList) Set(value string) error {
 	return nil
 }
 
+// Add appends a value to the filter list
+func (f *FilterList) Add(value string) {
+	if !f.Has(value) {
+		*f = append(*f, value)
+	}
+	return
+}
+
 // QueryString returns the FilterList as a sql query
 func (f *FilterList) QueryString() string {
 	if len(*f) == 0 {
